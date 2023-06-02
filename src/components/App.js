@@ -169,6 +169,7 @@ function App() {
       .then((data) => {
         localStorage.setItem("jwt", data.token);
         console.log(data);
+        setUserData(email);
         setLoggedIn(true);
         navigate("/");
       })
