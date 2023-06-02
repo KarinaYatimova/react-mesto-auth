@@ -1,7 +1,12 @@
-import succes from "../images/succes.svg"
-import unsucces from "../images/unsucces.svg"
+import succes from "../images/succes.svg";
+import unsucces from "../images/unsucces.svg";
 
 function InfoTooltip({ status, isOpen, onClose }) {
+  const succesImageText = "успешно";
+  const unsuccesImageText = "бузуспешно";
+  const succesText = "Вы успешно зарегистрировались!";
+  const unsuccesText = "Что-то пошло не так! Попробуйте ещё раз.";
+
   return (
     <section className={`popup popup_tooltip ${isOpen ? "popup_opened" : ""}`}>
       <div className="popup__container">
@@ -13,12 +18,10 @@ function InfoTooltip({ status, isOpen, onClose }) {
         <img
           className="popup__tooltip-image"
           src={status ? succes : unsucces}
-          alt={status ? "успешно" : "безуспешно"}
+          alt={status ? succesImageText : unsuccesImageText}
         />
         <p className="popup__tooltip-info">
-          {status
-            ? "Вы успешно зарегистрировались!"
-            : "Что-то пошло не так! Попробуйте ещё раз."}
+          {status ? succesText : unsuccesText}
         </p>
       </div>
     </section>

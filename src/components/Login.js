@@ -28,7 +28,6 @@ function Login({ handleLogin }) {
       <p className="register__welcome">Вход</p>
       <form onSubmit={handleSubmit} className="register__form">
         <input
-          required
           id="email"
           name="email"
           type="email"
@@ -36,9 +35,11 @@ function Login({ handleLogin }) {
           onChange={handleChange}
           placeholder="Email"
           className="register__input"
+          minLength="2"
+          maxLength="40"
+          required
         />
         <input
-          required
           id="password"
           name="password"
           type="password"
@@ -46,6 +47,9 @@ function Login({ handleLogin }) {
           onChange={handleChange}
           placeholder="Пароль"
           className="register__input"
+          minLength="2"
+          maxLength="40"
+          required
         />
         <button type="submit" className="register__button">
           Войти

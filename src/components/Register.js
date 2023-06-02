@@ -17,7 +17,7 @@ function Register({ handleRegister }) {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleRegister(formValue.email, formValue.password)
+    handleRegister(formValue.email, formValue.password);
   };
 
   return (
@@ -32,6 +32,9 @@ function Register({ handleRegister }) {
           onChange={handleChange}
           placeholder="Email"
           className="register__input"
+          minLength="2"
+          maxLength="40"
+          required
         />
         <input
           id="password"
@@ -41,6 +44,9 @@ function Register({ handleRegister }) {
           onChange={handleChange}
           placeholder="Пароль"
           className="register__input"
+          minLength="2"
+          maxLength="40"
+          required
         />
         <button
           type="submit"
